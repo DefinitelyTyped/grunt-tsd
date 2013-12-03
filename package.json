@@ -1,0 +1,55 @@
+{
+  "name": "grunt-tsd",
+  "description": "Grunt plugin to automate TSD and TypeScript definition related tasks",
+  "version": "0.0.1",
+  "homepage": "https://github.com/DefinitelyTyped/grunt-tsd",
+  "author": {
+    "name": "Bart van der Schoor",
+    "url": "https://github.com/Bartvds"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/grunt-tsd"
+  },
+  "bugs": {
+    "url": "https://github.com/DefinitelyTyped/grunt-tsd/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/DefinitelyTyped/grunt-tsd/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "gruntplugin",
+    "typescript",
+    "tsd"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "tsd": "git://github.com/DefinitelyTyped/tsd/#0.5.2-alpha.6"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1",
+    "gruntfile-gtx": "~0.1.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "jshint-path-reporter": "0.1",
+    "grunt-mocha-test": "~0.7.0",
+    "mocha": "~1.13.0",
+    "mocha-unfunk-reporter": "~0.3.7",
+    "chai": "git://github.com/Bartvds/chai/#fixes/1.8.x",
+    "chai-fs": "0.0.1",
+    "grunt-continue": "0.0.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  }
+}
