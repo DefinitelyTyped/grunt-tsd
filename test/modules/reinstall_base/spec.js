@@ -1,5 +1,5 @@
 
-var helper = require('../helper');
+var helper = require('../../helper');
 
 describe(helper.testName(__filename), function () {
 

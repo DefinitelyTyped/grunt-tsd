@@ -43,30 +43,57 @@ module.exports = function (grunt) {
 		}
 	});
 
-	gtx.define('tester', function(macro, id) {
+	gtx.define('tester', function (macro, id) {
 		var testPath = 'test/modules/' + id + '/';
+
 		macro.add('clean', [testPath + 'tmp/**/*']);
 		macro.add('jshint', {
 			src: [testPath + 'src/**/*.js']
 		});
-		macro.add('tsd', {
+
+		macro.add('copy', {
 			options: {
-				config: testPath + '/tsd.json'
-			}
+				config: testPath + '/fixtures/**'
+			},
+			files: [
+				{expand: true, cwd: testPath + 'fixtures', src: ['**'], dest: testPath + 'tmp/'}
+			]
 		});
+
+		macro.add('tsd', gtx.extendObject({
+			options: {
+				config: testPath + 'tmp/tsd.json'
+			}
+		}, {
+			options: macro.getParam('options')
+		}));
+
 		macro.add('mochaTest', {
 			options: {
 				timeout: macro.getParam('timeout', 3000)
 			},
-			src: [testPath + 'tmp/**/*.test.js']
+			src: [testPath + 'spec.js']
 		});
 	});
 
-	gtx.create('reinstall', 'tester', {
+	gtx.create('reinstall_base', 'tester', {
+		options: {
+			command: 'reinstall'
+		}
+	}, ['pass']);
 
-	});
+	gtx.create('reinstall_latest', 'tester', {
+		options: {
+			command: 'reinstall',
+			latest: true,
+			opts: {
+				saveToConfig: true,
+				resolveDependencies: true
+			}
+		}
+	}, ['pass']);
 
-	gtx.alias('pass', []);
+	gtx.alias('pass', ['gtx-group:pass']);
 	gtx.alias('fail', []);
 
 	gtx.alias('prep', ['clean', 'jshint']);

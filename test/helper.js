@@ -1,8 +1,10 @@
 
+/*jshint -W064*/
 var path = require('path');
+var Q = require('q');
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*
+
 //for safety
 function promiseDoneMistake() {
 	throw new Error('don\'t use a done() callback when using it.eventually()');
@@ -10,7 +12,6 @@ function promiseDoneMistake() {
 
 //monkey patch
 it.eventually = function eventually(expectation, assertion) {
-	/*jshint -W064*   /
 	it(expectation, function (done) {
 		Q(assertion(promiseDoneMistake)).done(function () {
 			done();
@@ -18,7 +19,7 @@ it.eventually = function eventually(expectation, assertion) {
 			done(err);
 		});
 	});
-};*/
+};
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

@@ -1,6 +1,6 @@
 {
   "name": "grunt-tsd",
-  "description": "Grunt plugin to automate TSD and TypeScript definition related tasks",
+  "description": "Grunt plugin to run TSD f",
   "version": "0.0.1",
   "homepage": "https://github.com/DefinitelyTyped/grunt-tsd",
   "author": {
@@ -33,12 +33,13 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "tsd": "git://github.com/DefinitelyTyped/tsd/#0.5.2-alpha.6"
+    "tsd": "git://github.com/DefinitelyTyped/tsd/#0.5.2-alpha.10",
+    "q": "~0.9.7"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-cli": "~0.1",
-    "gruntfile-gtx": "~0.1.1",
+    "gruntfile-gtx": "~0.2.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-jshint": "~0.7.2",
     "jshint-path-reporter": "0.1",
@@ -47,7 +48,8 @@
     "mocha-unfunk-reporter": "~0.3.7",
     "chai": "git://github.com/Bartvds/chai/#fixes/1.8.x",
     "chai-fs": "0.0.1",
-    "grunt-continue": "0.0.1"
+    "grunt-continue": "0.0.1",
+    "grunt-contrib-copy": "~0.4.1"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
