@@ -1,6 +1,6 @@
 # grunt-tsd
 
-[![Build Status](https://secure.travis-ci.org/Bartvds/grunt-tsd.png?branch=master)](http://travis-ci.org/Bartvds/grunt-tsd) [![NPM version](https://badge.fury.io/js/grunt-tsd.png)](http://badge.fury.io/js/grunt-tsd)
+[![Build Status](https://secure.travis-ci.org/DefinitelyTyped/grunt-tsd.png?branch=master)](http://travis-ci.org/DefinitelyTyped/grunt-tsd) [![NPM version](https://badge.fury.io/js/grunt-tsd.png)](http://badge.fury.io/js/grunt-tsd)
 
 > Grunt plugin to automate [tsd](https://github.com/DefinitelyTyped/tsd/) and TypeScript definition related tasks
 
