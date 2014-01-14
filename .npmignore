@@ -8,5 +8,6 @@ Gruntfile.js
 
 /.idea
 /node_modules
+/tsd-cache
 /test
 /*.tgz

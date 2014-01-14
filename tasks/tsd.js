@@ -14,7 +14,6 @@ module.exports = function (grunt) {
 
 	function promised(promise, done) {
 		promise.done(function () {
-			grunt.log.writeln('done');
 			done(true);
 		}, function (err) {
 			grunt.log.fail('error!');

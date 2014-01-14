@@ -12,7 +12,6 @@ module.exports = function (grunt) {
 
 	var gtx = require('gruntfile-gtx').wrap(grunt);
 	gtx.loadAuto();
-	gtx.loadTasks('tasks');
 
 	gtx.config({
 		pkg: grunt.file.readJSON('package.json'),
@@ -43,17 +42,17 @@ module.exports = function (grunt) {
 		}
 	});
 
+	var helper = require('./test/helper');
+	var compare = helper.createBulkCompare(grunt);
+
 	gtx.define('tester', function (macro, id) {
 		var testPath = 'test/modules/' + id + '/';
 
 		macro.add('clean', [testPath + 'tmp/**/*']);
-		macro.add('jshint', {
-			src: [testPath + 'src/**/*.js']
-		});
 
 		macro.add('copy', {
 			options: {
-				config: testPath + '/fixtures/**'
+				config: testPath + 'fixtures/**'
 			},
 			files: [
 				{expand: true, cwd: testPath + 'fixtures', src: ['**'], dest: testPath + 'tmp/'}
@@ -68,11 +67,8 @@ module.exports = function (grunt) {
 			options: macro.getParam('options')
 		}));
 
-		macro.add('mochaTest', {
-			options: {
-				timeout: macro.getParam('timeout', 3000)
-			},
-			src: [testPath + 'spec.js']
+		macro.call(function () {
+			compare.directory(testPath + 'tmp/typings', testPath + 'expected/typings', id);
 		});
 	});
 
@@ -96,9 +92,19 @@ module.exports = function (grunt) {
 	gtx.alias('pass', ['gtx-group:pass']);
 	gtx.alias('fail', []);
 
+	gtx.call('finalise', function () {
+		var done = this.async();
+		compare.runTest().then(function () {
+			done(true);
+		}, function (err) {
+			grunt.log.fail(err);
+			done(false);
+		});
+	});
+
 	gtx.alias('prep', ['clean', 'jshint']);
 	gtx.alias('build', ['prep']);
-	gtx.alias('test', ['build', 'pass', 'continueOn', 'fail', 'continueOff']);
+	gtx.alias('test', ['build', 'pass', 'finalise', 'continueOn', 'fail', 'continueOff']);
 
 	gtx.alias('default', ['test']);
 

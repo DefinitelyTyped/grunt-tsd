@@ -34,7 +34,8 @@
   },
   "dependencies": {
     "tsd": "git://github.com/DefinitelyTyped/tsd/#0.5.2-alpha.10",
-    "q": "~0.9.7"
+    "q": "~0.9.7",
+    "q-io": "~1.10.6"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -43,13 +44,12 @@
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-jshint": "~0.7.2",
     "jshint-path-reporter": "0.1",
-    "grunt-mocha-test": "~0.7.0",
-    "mocha": "~1.13.0",
-    "mocha-unfunk-reporter": "~0.3.7",
     "chai": "git://github.com/Bartvds/chai/#fixes/1.8.x",
     "chai-fs": "0.0.1",
     "grunt-continue": "0.0.1",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-copy": "~0.4.1",
+    "difflet": "~0.2.6",
+    "unfunk-diff": "0.0.1"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
