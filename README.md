@@ -7,8 +7,8 @@
 :construction: Work-in progress as `tsd 0.5.x` is still in development.
 
 * Run [`tsd 0.5.x`](https://github.com/DefinitelyTyped/tsd/) from grunt.
-* Support relevant tsd tasks (reinstall).
-* Update defintion `<reference path="xxx.d.ts" />` 'bundles'.
+* Supports relevant tsd tasks (currently only 'reinstall').
+* ~~Update defintion `<reference path="xxx.d.ts" />` 'bundles'.~~ **not yet** 
 
 ## Getting Started
 
@@ -32,13 +32,18 @@ grunt.loadNpmTasks('grunt-tsd');
 
 ```js
 grunt.initConfig({
-	tsd_install: {
-		all: {
+	tsd: {
+		refresh: {
 			options: {
-				config: 'tsd.json'
-         
-			},
-			src: ['./test/main.md', './test/intro.md']
+				// execute a command
+				command: 'reinstall',
+
+				//optional: always get from HEAD
+				latest: true,
+
+				// optional: specify config file
+				config: '../conf/tsd.json'         
+			}
 		}
 	}
 })
