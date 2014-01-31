@@ -4,12 +4,6 @@
 
 > Grunt plugin to automate [tsd](https://github.com/DefinitelyTyped/tsd/) and TypeScript definition related tasks
 
-:construction: Work-in progress as `tsd 0.5.x` is still in development.
-
-* Run [`tsd 0.5.x`](https://github.com/DefinitelyTyped/tsd/) from grunt.
-* Supports relevant tsd tasks (currently only 'reinstall').
-* ~~Update defintion `<reference path="xxx.d.ts" />` 'bundles'.~~ **not yet** 
-
 ## Getting Started
 
 This plugin requires Grunt `~0.4.1`
@@ -51,7 +45,7 @@ grunt.initConfig({
 
 ## History
 
-* 0.0.1 - First release
+* 0.0.1 - First release for TSD `0.5.2`
 
 ## Contributing
 
