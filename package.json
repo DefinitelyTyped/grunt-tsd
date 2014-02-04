@@ -33,7 +33,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "tsd": "0.5.2"
+    "tsd": "0.5.3"
   },
   "devDependencies": {
 	"q": "~0.9.7",
