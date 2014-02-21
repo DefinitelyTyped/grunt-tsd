@@ -89,7 +89,7 @@ function createBulkCompare(grunt) {
 					assert.deepEqual(item.oneTree, item.twoTree);
 				}).fail(function (err) {
 					grunt.log.writeln(differ.ansi(err.actual, err.expected));
-					return err;
+					throw err;
 				});
 			});
 		}));

@@ -1,7 +1,7 @@
 {
   "name": "grunt-tsd",
-  "description": "Grunt plugin to run TSD f",
-  "version": "0.0.3",
+  "description": "Grunt plugin to run TSD",
+  "version": "0.0.4",
   "homepage": "https://github.com/DefinitelyTyped/grunt-tsd",
   "author": {
     "name": "Bart van der Schoor",
@@ -34,8 +34,7 @@
   },
   "dependencies": {
     "q": "~0.9.7",
-    "q-io": "~1.10.6",
-    "tsd": "~0.5.4"
+    "tsd": "~0.5.6"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
