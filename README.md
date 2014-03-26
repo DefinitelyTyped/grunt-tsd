@@ -35,7 +35,7 @@ grunt.initConfig({
 				//optional: always get from HEAD
 				latest: true,
 
-				// optional: specify config file
+				// specify config file
 				config: '../conf/tsd.json',
 
 				// experimental: options to pass to tsd.API
