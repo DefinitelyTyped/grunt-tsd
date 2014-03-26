@@ -9,34 +9,6 @@ var differ = require('unfunk-diff');
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-//for safety
-function promiseDoneMistake() {
-	throw new Error('don\'t use a done() callback when using eventually()');
-}
-
-function patchEventually(word) {
-	word.eventually = function eventually(expectation, assertion) {
-		word(expectation, function (done) {
-			Q(assertion(promiseDoneMistake)).done(function () {
-				done();
-			}, function (err) {
-				done(err);
-			});
-		});
-	};
-}
-
-//monkey patch
-if (typeof it !== 'undefined') {
-	patchEventually(it);
-	patchEventually(before);
-	patchEventually(beforeEach);
-	patchEventually(after);
-	patchEventually(afterEach);
-}
-
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 function testName(filename) {
 	return path.basename(path.dirname(filename)) + '/' + path.basename(filename);
 }

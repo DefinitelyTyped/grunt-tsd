@@ -10,4 +10,5 @@ Gruntfile.js
 /node_modules
 /tsd-cache
 /test
+/tmp
 /*.tgz

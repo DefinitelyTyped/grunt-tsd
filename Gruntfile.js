@@ -83,8 +83,6 @@ module.exports = function (grunt) {
 			command: 'reinstall',
 			latest: true,
 			opts: {
-				saveToConfig: true,
-				resolveDependencies: true
 			}
 		}
 	}, ['pass']);

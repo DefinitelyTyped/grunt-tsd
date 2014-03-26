@@ -44,11 +44,9 @@
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-jshint": "~0.7.2",
     "jshint-path-reporter": "0.1",
-    "chai": "git://github.com/Bartvds/chai/#fixes/1.8.x",
-    "chai-fs": "0.0.1",
+    "chai": "~1.9.1",
     "grunt-continue": "0.0.1",
     "grunt-contrib-copy": "~0.4.1",
-    "difflet": "~0.2.6",
     "unfunk-diff": "0.0.1"
   },
   "peerDependencies": {
