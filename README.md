@@ -22,7 +22,7 @@ grunt.loadNpmTasks('grunt-tsd');
 
 ## The "tsd" task       
 
-### Default Options
+### Options
 
 ```js
 grunt.initConfig({
@@ -36,7 +36,12 @@ grunt.initConfig({
 				latest: true,
 
 				// optional: specify config file
-				config: '../conf/tsd.json'         
+				config: '../conf/tsd.json',
+
+				// experimental: options to pass to tsd.API
+				opts: {
+					// props from tsd.Options
+				}
 			}
 		}
 	}
@@ -45,6 +50,8 @@ grunt.initConfig({
 
 ## History
 
+* 0.1.0 - reinstall always resolves dependencies, saves to config/bundle and overwrites 
+* 0.0.2 ... 0.0.4 - Updating TSD version to `0.5.6`
 * 0.0.1 - First release for TSD `0.5.2`
 
 ## Contributing
