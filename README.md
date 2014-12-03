@@ -10,8 +10,10 @@ This plugin requires Grunt `~0.4.1`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
+Grunt-tsd `0.2.0` is a pre-release for TSD `0.6.0`, use `@next` tag
+
 ```shell
-$ npm install grunt-tsd --save-dev
+$ npm install grunt-tsd@next --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
@@ -50,7 +52,8 @@ grunt.initConfig({
 
 ## History
 
-* 0.1.0 - reinstall always resolves dependencies, saves to config/bundle and overwrites 
+* 0.2.0 - TSD `0.6.x` support (fist as prerelease @next)
+* 0.1.0 - reinstall always resolves dependencies, saves to config/bundle and overwrites
 * 0.0.2 ... 0.0.4 - Updating TSD version to `0.5.6`
 * 0.0.1 - First release for TSD `0.5.2`
 
