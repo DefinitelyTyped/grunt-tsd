@@ -86,6 +86,13 @@ module.exports = function (grunt) {
 			}
 		}
 	}, ['pass']);
+	
+	gtx.create('link', 'tester', {
+		options:{
+			command: 'link',
+			opts:{}
+		}
+	}, ['pass']);
 
 	gtx.alias('pass', ['gtx-group:pass']);
 	gtx.alias('fail', []);
